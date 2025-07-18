@@ -54,13 +54,21 @@
     a:hover {
       text-decoration: underline;
     }
-    body {
-    background-image: url('soon.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+ html, body {
     margin: 0;
-    height: 100vh;
+    padding: 0;
+    height: 100%;
+  }
+
+  body {
+    background-image: url('soon.png');
+    background-size: contain;         /* Use 'contain' instead of 'cover' */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #000;           /* Fallback color or surrounding color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   </style>
 </head>
