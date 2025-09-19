@@ -74,6 +74,27 @@
     .mark{opacity:.9}
     .pill{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid var(--border); color:var(--muted)}
     .social-links a{margin-right:12px; font-size:14px; color:var(--accent)}
+    /* --- Mobile polish --- */
+img { max-width: 100%; height: auto; }
+
+/* Hero logo stacks and resizes */
+@media (max-width: 720px) {
+  .hero .wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+  .hero .wrap > div:first-child img { height: 120px; width: 120px; }
+}
+
+/* Grids collapse for small screens */
+@media (max-width: 920px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* Navigation cleanup */
+@media (max-width: 780px) {
+  .nav { padding: 10px 0; }
+  nav ul { gap: 12px; flex-wrap: wrap; }
+}
+
   </style>
 </head>
 <body>
