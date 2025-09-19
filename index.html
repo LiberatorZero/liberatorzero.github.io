@@ -104,41 +104,40 @@ img { max-width: 100%; height: auto; }
         <div class="brand">
         <h1>LiberatorZero</h1>
       </div>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#mission">Mission</a></li>
-          <li><a href="#vision">Vision</a></li>
-          <li><a href="#roadmap">Roadmap</a></li>
-          <li><a href="#serve">Who We Serve</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+     <nav aria-label="Primary">
+  <ul style="display:flex; gap:12px; flex-wrap:wrap; margin:0; padding:0; list-style:none;">
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#serve">Who We Serve</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
     </div>
   </header>
-  <main>
+  <main style="padding-top:84px;">
     <section class="hero">
-    <div class="wrap" style="display:flex; flex-wrap:wrap; align-items:center; gap:40px;">
-  <!-- Logo on the left -->
-  <div style="flex:0 0 180px; display:flex; justify-content:center; margin:auto;">
-    <img src="logo.png" alt="LiberatorZero logo" 
-         style="height:180px; width:180px; border-radius:50%; object-fit:cover;">
-  </div>
+  <div class="wrap" style="display:flex; align-items:center; gap:40px; flex-wrap:wrap;">
+    <!-- Logo badge (scales on mobile via vw, capped on desktop) -->
+    <div style="flex:0 0 auto; display:flex; justify-content:flex-start;">
+      <img src="logo.png" alt="LiberatorZero logo"
+           style="width:min(28vw, 180px); height:min(28vw, 180px); border-radius:50%; object-fit:cover;">
+    </div>
 
-  <!-- Text content -->
-  <div style="flex:1 1 300px; min-width:250px;">
-    <span class="kicker">Cybersecurity Education</span>
-    <h2>Liberation Through Education</h2>
-    <div class="accent-bar"></div>
-    <p>Practical security knowledge for communities, families, and small businesses — delivered through clear, real-world education and mentorship.</p>
-    <div class="hero-cta">
-      <a class="btn" href="#services">Explore Services</a>
-      <a class="btn btn-alt" href="#roadmap">See What's Coming</a>
+    <!-- Text content -->
+    <div style="flex:1 1 320px; min-width:260px;">
+      <span class="kicker">Cybersecurity Education</span>
+      <h2>Liberation Through Education</h2>
+      <div class="accent-bar"></div>
+      <p>Practical security knowledge for communities, families, and small businesses — delivered through clear, real-world education and mentorship.</p>
+      <div class="hero-cta" style="display:flex; flex-wrap:wrap; gap:12px;">
+        <a class="btn" href="#services">Explore Services</a>
+        <a class="btn btn-alt" href="#roadmap">See What's Coming</a>
+      </div>
     </div>
   </div>
-</div>
-    </section>
+</section>
     <section id="mission">
       <div class="wrap grid grid-2">
         <article class="card">
@@ -268,4 +267,5 @@ img { max-width: 100%; height: auto; }
   </footer>
 </body>
 </html>
+
 
