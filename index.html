@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LiberatorZero — Liberation Through Education</title>
   <meta name="description" content="Practical security knowledge for communities, families, and small businesses — delivered through real-world education, mentorship, and guidance." />
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <!-- ===== Header ===== -->
+  <!-- Header (fixed, compact) -->
   <header class="site-header">
     <div class="wrap nav">
       <div class="brand">
@@ -27,12 +30,13 @@
     </div>
   </header>
 
-  <!-- ===== Main ===== -->
+  <!-- Main -->
   <main class="site-main">
+    <!-- HERO -->
     <section class="hero hero-glow">
       <div class="wrap hero-row">
         <div class="hero-badge">
-          <img src="logo.png" alt="LiberatorZero logo" class="hero-logo">
+          <img src="./logo.png" alt="LiberatorZero logo" class="hero-logo" />
         </div>
         <div class="hero-text">
           <span class="kicker">Cybersecurity Education</span>
@@ -47,6 +51,7 @@
       </div>
     </section>
 
+    <!-- MISSION + VISION -->
     <section id="mission">
       <div class="wrap grid grid-2">
         <article class="card">
@@ -64,13 +69,14 @@
       </div>
     </section>
 
+    <!-- ROADMAP -->
     <section id="roadmap">
       <div class="wrap">
         <div class="pill">Roadmap</div>
         <h3>What's Coming</h3>
         <div class="accent-bar"></div>
         <div class="grid grid-3">
-          <div class="card">
+          <article class="card">
             <strong>Write-ups & Blogs</strong>
             <p class="sub">Deep dives & practical guides</p>
             <ul class="list">
@@ -78,8 +84,8 @@
               <li>Blogs on the latest cybersecurity news</li>
               <li>Hands-on lab walkthroughs</li>
             </ul>
-          </div>
-          <div class="card">
+          </article>
+          <article class="card">
             <strong>Tool Demos</strong>
             <p class="sub">Cybersecurity tools and software overviews</p>
             <ul class="list">
@@ -87,8 +93,8 @@
               <li>Software and utility overviews</li>
               <li>Code snippets and lab repos</li>
             </ul>
-          </div>
-          <div class="card">
+          </article>
+          <article class="card">
             <strong>Video Content — Spring 2026</strong>
             <p class="sub">Beginner on-ramp + advanced series</p>
             <ul class="list">
@@ -96,79 +102,88 @@
               <li>Broad topic videos</li>
               <li>Penetration testing long-form series</li>
             </ul>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- WHO WE SERVE -->
     <section id="serve">
       <div class="wrap">
         <div class="pill">Who We Serve</div>
         <h3>Our Focus</h3>
         <div class="accent-bar"></div>
         <div class="grid grid-3">
-          <div class="card">
+          <article class="card">
             <strong>Local Communities</strong>
             <p>Workshops and talks that make cybersecurity approachable for everyone.</p>
-          </div>
-          <div class="card">
+          </article>
+          <article class="card">
             <strong>Small Businesses</strong>
             <p>Practical, affordable advisement to keep day-to-day operations safe and resilient.</p>
-          </div>
-          <div class="card">
+          </article>
+          <article class="card">
             <strong>Youth & Adults</strong>
             <p>Programs and mentorship tailored to students, career-changers, and lifelong learners.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="services">
       <div class="wrap">
         <div class="pill">Services</div>
         <h3>How LiberatorZero Can Help</h3>
         <div class="accent-bar"></div>
         <div class="grid grid-2">
-          <div class="card">
+          <article class="card">
             <strong>Mentorship</strong>
             <p class="sub">Career guidance, study plans, resume building</p>
             <p>Structured 1:1 or small-group sessions tailored to goals: breaking in, leveling up, or specializing.</p>
-          </div>
-          <div class="card">
+          </article>
+          <article class="card">
             <strong>Consulting</strong>
             <p class="sub">Small & local business / home cybersecurity</p>
-            <p>Practical, right-sized guidance for local organizations and households: secure configurations, safe workflows, and incident readiness.</p>
-          </div>
-          <div class="card">
+            <p>Right-sized guidance: secure configurations, safe-by-default workflows, and incident readiness.</p>
+          </article>
+          <article class="card">
             <strong>Training</strong>
             <p class="sub">Broad cybersecurity concepts, clearly taught</p>
-            <p>Concept-driven courses covering security fundamentals, risk, architecture, detection mindset, and offensive/defensive thinking.</p>
-          </div>
-          <div class="card">
+            <p>Concept-driven courses covering fundamentals, risk, architecture, detection mindset, and offensive/defensive thinking.</p>
+          </article>
+          <article class="card">
             <strong>Speaking</strong>
             <p class="sub">Talks, panels, and keynotes</p>
             <p>Actionable content for conferences, meetups, and private briefings.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT (boxed) -->
     <section id="contact">
       <div class="wrap">
-        <div class="pill">Contact</div>
-        <h3>Book Mentorship or Inquiries</h3>
-        <p>Email: <a href="mailto:contact@liberatorzero.io">contact@liberatorzero.io</a></p>
-        <div class="social-links">
-          <a href="https://linkedin.com/company/liberatorzero/" target="_blank">LinkedIn</a>
-          <a href="https://x.com/LiberatorZero_" target="_blank">X / Twitter</a>
-          <a href="https://www.youtube.com/@LiberatorZero" target="_blank">YouTube</a>
-          <a href="https://github.com/LiberatorZero" target="_blank">GitHub</a>
-        </div>
+        <article class="card">
+          <div class="pill">Contact</div>
+          <h3>Book Mentorship or Inquiries</h3>
+          <p class="sub">Direct scheduling via email</p>
+          <p>Email: <a href="mailto:contact@liberatorzero.io">contact@liberatorzero.io</a></p>
+          <div class="social-links">
+            <a href="https://linkedin.com/company/liberatorzero/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://x.com/LiberatorZero_" target="_blank" rel="noopener">X / Twitter</a>
+            <a href="https://www.youtube.com/@LiberatorZero" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://github.com/LiberatorZero" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <div style="margin-top:10px">
+            <a class="btn" href="mailto:contact@liberatorzero.io?subject=Mentorship%20Inquiry">Book Mentorship</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
-  <!-- ===== Footer ===== -->
+  <!-- Footer (fixed) -->
   <footer class="site-footer">
     <div class="wrap foot-grid">
       <div class="mark">© 2025 LiberatorZero™. All rights reserved.</div>
