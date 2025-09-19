@@ -80,4 +80,36 @@ nav a:hover{ opacity:1 }
 /* ===== Sections & cards ===== */
 section{ padding:42px 0 }
 .grid{ display:grid; gap:18px }
-.grid-2{ grid-template-colum
+.grid-2{ grid-template-columns:1fr 1fr }
+.grid-3{ grid-template-columns:repeat(3,1fr) }
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+  border:1px solid var(--border); border-radius:16px; padding:18px;
+}
+h3{ margin:0 0 10px; font-size:22px }
+.sub{ color:var(--muted); margin:0 0 6px; font-size:14px }
+.list{ padding:0; margin:0; list-style:none }
+.list li{ padding:8px 0; border-bottom:1px dashed rgba(159,176,193,.18) }
+.list li:last-child{ border-bottom:none }
+
+/* ===== Footer ===== */
+footer{ padding:28px 0 48px; border-top:1px solid var(--border); color:var(--muted); font-size:13px }
+.foot-grid{ display:grid; gap:12px }
+@media(min-width:780px){ .foot-grid{ grid-template-columns:1fr auto } }
+.mark{ opacity:.9 }
+
+/* ===== Mobile polish ===== */
+@media (max-width: 920px){
+  .grid-3{ grid-template-columns:1fr }
+  .grid-2{ grid-template-columns:1fr }
+}
+@media (max-width: 780px){
+  .nav{ padding:10px 0 }
+  .nav-list{ gap:12px; flex-wrap:wrap }
+  .site-main{ padding-top:96px } /* header gets taller when nav wraps */
+}
+@media (max-width: 720px){
+  .hero-row{ flex-direction:column; align-items:flex-start; gap:20px }
+  .hero-logo{ width:120px; height:120px }
+}
