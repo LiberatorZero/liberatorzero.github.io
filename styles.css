@@ -1,32 +1,28 @@
-/* ===== Tokens ===== */
+/* ===== Design Tokens ===== */
 :root{
   --bg:#0b0f14; --text:#e6eef5; --muted:#9fb0c1;
   --accent:#00d1b2; --accent-2:#7c3aed; --border:#1f2a36;
   --accent-rgb:0,209,178; --accent2-rgb:124,58,237;
 }
 
-/* ===== Page base ===== */
+/* ===== Page Base & Full-Page Background ===== */
 html, body { height:100%; margin:0; }
 body{
-  position: relative;                 /* create stacking context for ::before */
+  position: relative;                  /* for ::before background layer */
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
   color:var(--text); line-height:1.6;
-  background: var(--bg);              /* fallback under the image layer */
+  background: var(--bg);               /* fallback under image layer */
   min-height:100%;
 }
 
-/* Full-page background that NEVER stops */
+/* Full-viewport background that never stops */
 body::before{
   content:"";
-  position: fixed;                     /* lock to viewport */
-  inset: 0;                            /* top/right/bottom/left: 0 */
-  z-index: -1;                         /* sit behind all content */
-  background:
-    url("./background.png") center center / cover no-repeat;
-  /* If you prefer parallax to stay still on scroll, add: background-attachment: fixed; */
+  position: fixed; inset: 0; z-index: -1;
+  background: url("./background.png") center center / cover no-repeat;
+  /* If you prefer parallax to stay put, add: background-attachment: fixed; */
 }
 
-/* Links & media */
 a{ color:var(--accent); text-decoration:none }
 a:hover{ opacity:.9 }
 img{ max-width:100%; height:auto }
@@ -54,7 +50,7 @@ nav a{ color:var(--text); opacity:.88 } nav a:hover{ opacity:1 }
   padding:8px 0; text-align:center; font-size:13px; color:var(--muted);
 }
 
-/* Content padding to clear fixed bars */
+/* ===== Main spacing to clear fixed bars ===== */
 .site-main{ padding-top:58px; padding-bottom:44px; }
 
 /* ===== Hero ===== */
@@ -66,11 +62,39 @@ nav a{ color:var(--text); opacity:.88 } nav a:hover{ opacity:1 }
 .kicker{ font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.14em }
 .accent-bar{ height:2px; width:64px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); border-radius:2px; margin:10px 0 16px }
 .hero-cta{ display:flex; gap:12px; flex-wrap:wrap }
+
 /* restrained shimmer that sits above bg image but below content */
 .hero-glow{
   background:
     radial-gradient(1000px 600px at 90% -10%, rgba(124,58,237,.18), transparent 75%),
     radial-gradient(800px 480px at -10% 0%, rgba(0,209,178,.14), transparent 70%);
+}
+
+/* === Hero Readability (Option 3) === */
+/* Mobile: subtle translucent panel behind text */
+@media (max-width: 720px){
+  .hero-text{
+    background: rgba(11,15,20,.65);
+    padding: 16px;
+    border-radius: 12px;
+  }
+}
+/* Desktop: no box, just contrasty text shadows */
+@media (min-width: 721px){
+  .hero-text h2,
+  .hero-text p,
+  .hero-text .kicker{
+    text-shadow: 0 2px 6px rgba(0,0,0,.7);
+  }
+}
+
+/* Hero buttons: ensure contrast over busy backgrounds */
+.hero .btn,
+.hero .btn.btn-alt{
+  text-shadow: 0 2px 6px rgba(0,0,0,.55);
+  box-shadow:
+    0 8px 22px rgba(var(--accent-rgb), .14),
+    0 3px 10px rgba(0,0,0,.32);
 }
 
 /* ===== Sections & Grids ===== */
@@ -79,15 +103,15 @@ section{ padding:36px 0 }
 .grid-2{ grid-template-columns:1fr 1fr }
 .grid-3{ grid-template-columns:repeat(3,1fr) }
 
-/* ===== Cards: higher opacity + ambient glow + hover boost ===== */
+/* ===== Cards: higher opacity + ambient glow + hover lift ===== */
 .card{
   position:relative;
-  background: rgba(15,20,27,.86);         /* less transparent for readability */
+  background: rgba(15,20,27,.86);          /* readable over background */
   border:1px solid rgba(var(--accent-rgb), .28);
   border-radius:16px; padding:18px;
   box-shadow:
-    0 8px 24px rgba(0,0,0,.35),           /* base depth */
-    0 10px 28px rgba(var(--accent-rgb), .10); /* ambient color glow */
+    0 8px 24px rgba(0,0,0,.35),
+    0 10px 28px rgba(var(--accent-rgb), .10);
   transition: transform .2s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
 }
 /* Edge glow layer (subtle by default) */
@@ -103,7 +127,7 @@ section{ padding:36px 0 }
   .card:hover, .card:focus-within{
     transform: translateY(-2px);
     border-color: rgba(var(--accent-rgb), .55);
-    background: rgba(15,20,27,.92);       /* slightly more opaque on hover */
+    background: rgba(15,20,27,.92);
     box-shadow:
       0 16px 48px rgba(0,0,0,.40),
       0 14px 42px rgba(var(--accent-rgb), .16);
@@ -118,14 +142,7 @@ section{ padding:36px 0 }
   #contact .card.compact p{ margin:6px 0 }
 }
 
-/* Text bits */
-h3{ margin:0 0 10px; font-size:22px }
-.sub{ color:var(--muted); font-size:14px; margin:0 0 6px }
-.list{ list-style:none; margin:0; padding:0 }
-.list li{ padding:8px 0; border-bottom:1px dashed rgba(159,176,193,.18) }
-.list li:last-child{ border-bottom:none }
-
-/* Buttons */
+/* ===== Buttons ===== */
 .btn{
   display:inline-block; padding:10px 16px;
   border:1px solid var(--accent); border-radius:12px;
@@ -136,7 +153,18 @@ h3{ margin:0 0 10px; font-size:22px }
 .btn-alt{ border-color:var(--border); background:transparent }
 .btn.sm{ padding:8px 12px; font-size:14px }
 
-/* Social links */
+/* ===== Typography helpers ===== */
+h3{ margin:0 0 10px; font-size:22px }
+.sub{ color:var(--muted); font-size:14px; margin:0 0 6px }
+.list{ list-style:none; margin:0; padding:0 }
+.list li{ padding:8px 0; border-bottom:1px dashed rgba(159,176,193,.18) }
+.list li:last-child{ border-bottom:none }
+.pill{
+  display:inline-block; font-size:12px; padding:4px 10px;
+  border-radius:999px; border:1px solid var(--border); color:var(--muted);
+}
+
+/* ===== Social links ===== */
 .social-links a{
   display:inline-block; margin-right:12px; font-weight:600; color:var(--text);
   text-shadow:0 0 10px rgba(var(--accent-rgb), .18);
@@ -148,6 +176,6 @@ h3{ margin:0 0 10px; font-size:22px }
 @media (max-width: 720px){
   .hero-row{ flex-direction:column; align-items:flex-start; gap:20px }
   .hero-logo{ width:120px; height:120px }
-  /* Slightly stronger card opacity on small screens for legibility over image */
+  /* slightly stronger panel opacity for small screens */
   .card{ background: rgba(15,20,27,.90); }
 }
