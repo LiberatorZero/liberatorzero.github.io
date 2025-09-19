@@ -119,15 +119,15 @@ img { max-width: 100%; height: auto; }
   </header>
   <main>
     <section class="hero">
-    <div class="wrap" style="display:flex; align-items:center; gap:50px;">
-  <!-- Logo badge -->
-  <div style="flex-shrink:0; display:flex; justify-content:flex-start;">
+    <div class="wrap" style="display:flex; flex-wrap:wrap; align-items:center; gap:40px;">
+  <!-- Logo on the left -->
+  <div style="flex:0 0 180px; display:flex; justify-content:center; margin:auto;">
     <img src="logo.png" alt="LiberatorZero logo" 
-         style="height:225px; width:225px; border-radius:50%; object-fit:cover;">
+         style="height:180px; width:180px; border-radius:50%; object-fit:cover;">
   </div>
 
   <!-- Text content -->
-  <div>
+  <div style="flex:1 1 300px; min-width:250px;">
     <span class="kicker">Cybersecurity Education</span>
     <h2>Liberation Through Education</h2>
     <div class="accent-bar"></div>
@@ -268,3 +268,4 @@ img { max-width: 100%; height: auto; }
   </footer>
 </body>
 </html>
+
