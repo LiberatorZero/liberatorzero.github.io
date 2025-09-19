@@ -8,7 +8,6 @@
 /* ===== Background on <html> ensures desktop reliability ===== */
 html, body { height:100%; margin:0; }
 html{
-  background: url("./background.png") center center / cover no-repeat, var(--bg);
 }
 
 /* ===== Base ===== */
