@@ -21,7 +21,11 @@ body{
   margin:0;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
   color:var(--text);
-  background: var(--bg);
+
+  /* Background image */
+  background: url("background.png") no-repeat center center fixed;
+  background-size: cover;
+
   line-height:1.6;
 }
 a{ color:var(--accent); text-decoration:none }
