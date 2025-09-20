@@ -203,14 +203,20 @@ h3{ margin:0 0 10px; font-size:22px }
     text-shadow: 0 3px 12px rgba(0,0,0,.85) !important;
   }
 
-  /* Buttons: higher opacity + polished */
-  .hero .btn,
-  .hero .btn.btn-alt{
-    background: linear-gradient(135deg, rgba(0,209,178,.9), rgba(124,58,237,.9)) !important;
-    border: 1px solid rgba(255,255,255,.25) !important;
-    text-shadow: 0 2px 10px rgba(0,0,0,.75) !important;
-    filter: drop-shadow(0 6px 16px rgba(0,0,0,.45))
-            drop-shadow(0 10px 24px rgba(var(--accent-rgb), .25));
-  }
+/* Buttons: dimmer, subtle gradient */
+.hero .btn,
+.hero .btn.btn-alt{
+  background: linear-gradient(135deg, rgba(0,209,178,.25), rgba(124,58,237,.25)) !important;
+  border: 1px solid rgba(255,255,255,.15) !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,.6) !important;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+  transition: background .2s ease, transform .2s ease;
+}
+
+/* Slight lift + stronger gradient on hover */
+.hero .btn:hover,
+.hero .btn.btn-alt:hover{
+  background: linear-gradient(135deg, rgba(0,209,178,.45), rgba(124,58,237,.45)) !important;
+  transform: translateY(-1px);
 }
 
