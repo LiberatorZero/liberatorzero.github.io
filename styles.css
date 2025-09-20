@@ -173,19 +173,28 @@ h3{ margin:0 0 10px; font-size:22px }
   .hero-logo{ width:120px; height:120px }
 }
 
-/* === DESKTOP HERO CONTRAST FIX (stronger opacity) === */
+/* === DESKTOP HERO CONTRAST + FROSTED GLASS TEXT BOX === */
 @media (min-width: 721px){
   .hero{ position: relative; }
   .hero::after{
     content:"";
     position:absolute; inset:0; pointer-events:none;
-    /* darker overlay for stronger separation */
+    /* darker overlay for separation */
     background:
       radial-gradient(1200px 700px at 60% 40%, rgba(0,0,0,.45), transparent 70%),
       linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10) 40%, rgba(0,0,0,.35));
     z-index:0;
   }
   .hero .wrap{ position: relative; z-index:1; }
+
+  /* Frosted-glass effect for hero text */
+  .hero-text{
+    background: rgba(15,20,27,.55);   /* translucent dark */
+    padding: 20px;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);       /* frosted glass effect */
+    -webkit-backdrop-filter: blur(6px); /* Safari support */
+  }
 
   /* Stronger shadows for text */
   .hero .hero-text .kicker,
@@ -194,13 +203,14 @@ h3{ margin:0 0 10px; font-size:22px }
     text-shadow: 0 3px 12px rgba(0,0,0,.85) !important;
   }
 
-  /* Buttons: higher opacity backgrounds + stronger shadow */
+  /* Buttons: higher opacity + polished */
   .hero .btn,
   .hero .btn.btn-alt{
-    background: linear-gradient(135deg, rgba(0,209,178,.85), rgba(124,58,237,.85)) !important;
+    background: linear-gradient(135deg, rgba(0,209,178,.9), rgba(124,58,237,.9)) !important;
     border: 1px solid rgba(255,255,255,.25) !important;
     text-shadow: 0 2px 10px rgba(0,0,0,.75) !important;
     filter: drop-shadow(0 6px 16px rgba(0,0,0,.45))
             drop-shadow(0 10px 24px rgba(var(--accent-rgb), .25));
   }
 }
+
