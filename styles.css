@@ -173,32 +173,34 @@ h3{ margin:0 0 10px; font-size:22px }
   .hero-logo{ width:120px; height:120px }
 }
 
-/* === DESKTOP HERO CONTRAST FIX (place at end of styles.css) === */
+/* === DESKTOP HERO CONTRAST FIX (stronger opacity) === */
 @media (min-width: 721px){
-  /* Layer a subtle dark overlay above the hero background but below content */
   .hero{ position: relative; }
   .hero::after{
     content:"";
     position:absolute; inset:0; pointer-events:none;
-    /* soft vignette + center focus; tweak alphas if needed */
+    /* darker overlay for stronger separation */
     background:
-      radial-gradient(1200px 700px at 60% 40%, rgba(0,0,0,.28), transparent 70%),
-      linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.00) 40%, rgba(0,0,0,.18));
+      radial-gradient(1200px 700px at 60% 40%, rgba(0,0,0,.45), transparent 70%),
+      linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10) 40%, rgba(0,0,0,.35));
     z-index:0;
   }
-  /* ensure hero content sits above the overlay */
   .hero .wrap{ position: relative; z-index:1; }
 
-  /* Enforce readable text + buttons over busy backgrounds */
+  /* Stronger shadows for text */
   .hero .hero-text .kicker,
   .hero .hero-text h2,
   .hero .hero-text p{
-    text-shadow: 0 3px 10px rgba(0,0,0,.78) !important;
+    text-shadow: 0 3px 12px rgba(0,0,0,.85) !important;
   }
+
+  /* Buttons: higher opacity backgrounds + stronger shadow */
   .hero .btn,
   .hero .btn.btn-alt{
-    text-shadow: 0 2px 8px rgba(0,0,0,.65) !important;
-    filter: drop-shadow(0 6px 16px rgba(0,0,0,.35))
-            drop-shadow(0 10px 24px rgba(var(--accent-rgb), .18));
+    background: linear-gradient(135deg, rgba(0,209,178,.85), rgba(124,58,237,.85)) !important;
+    border: 1px solid rgba(255,255,255,.25) !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,.75) !important;
+    filter: drop-shadow(0 6px 16px rgba(0,0,0,.45))
+            drop-shadow(0 10px 24px rgba(var(--accent-rgb), .25));
   }
 }
