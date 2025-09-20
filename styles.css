@@ -173,50 +173,41 @@ h3{ margin:0 0 10px; font-size:22px }
   .hero-logo{ width:120px; height:120px }
 }
 
-/* === DESKTOP HERO CONTRAST + FROSTED GLASS TEXT BOX === */
+/* === DESKTOP HERO FULL FROSTED GLASS === */
 @media (min-width: 721px){
-  .hero{ position: relative; }
-  .hero::after{
-    content:"";
-    position:absolute; inset:0; pointer-events:none;
-    /* darker overlay for separation */
-    background:
-      radial-gradient(1200px 700px at 60% 40%, rgba(0,0,0,.45), transparent 70%),
-      linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.10) 40%, rgba(0,0,0,.35));
-    z-index:0;
+  .hero{
+    position: relative;
+    background: rgba(15,20,27,.55);      /* translucent dark layer */
+    backdrop-filter: blur(8px);          /* frosted glass */
+    -webkit-backdrop-filter: blur(8px);  /* Safari support */
+    border-bottom: 1px solid rgba(255,255,255,.1);
   }
-  .hero .wrap{ position: relative; z-index:1; }
 
-  /* Frosted-glass effect for hero text */
+  /* Optional: remove text box background since section has it now */
   .hero-text{
-    background: rgba(15,20,27,.55);   /* translucent dark */
-    padding: 20px;
-    border-radius: 14px;
-    backdrop-filter: blur(6px);       /* frosted glass effect */
-    -webkit-backdrop-filter: blur(6px); /* Safari support */
+    background: none !important;
+    padding: 0; border-radius: 0;
   }
 
-  /* Stronger shadows for text */
+  /* Text readability */
   .hero .hero-text .kicker,
   .hero .hero-text h2,
   .hero .hero-text p{
-    text-shadow: 0 3px 12px rgba(0,0,0,.85) !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,.7);
   }
 
-/* Buttons: dimmer, subtle gradient */
-.hero .btn,
-.hero .btn.btn-alt{
-  background: linear-gradient(135deg, rgba(0,209,178,.25), rgba(124,58,237,.25)) !important;
-  border: 1px solid rgba(255,255,255,.15) !important;
-  text-shadow: 0 1px 4px rgba(0,0,0,.6) !important;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
-  transition: background .2s ease, transform .2s ease;
+  /* Dimmed buttons inside hero */
+  .hero .btn,
+  .hero .btn.btn-alt{
+    background: linear-gradient(135deg, rgba(0,209,178,.25), rgba(124,58,237,.25)) !important;
+    border: 1px solid rgba(255,255,255,.15) !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,.6) !important;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+    transition: background .2s ease, transform .2s ease;
+  }
+  .hero .btn:hover,
+  .hero .btn.btn-alt:hover{
+    background: linear-gradient(135deg, rgba(0,209,178,.45), rgba(124,58,237,.45)) !important;
+    transform: translateY(-1px);
+  }
 }
-
-/* Slight lift + stronger gradient on hover */
-.hero .btn:hover,
-.hero .btn.btn-alt:hover{
-  background: linear-gradient(135deg, rgba(0,209,178,.45), rgba(124,58,237,.45)) !important;
-  transform: translateY(-1px);
-}
-
