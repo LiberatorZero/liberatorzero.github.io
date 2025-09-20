@@ -132,8 +132,8 @@ section{ padding:36px 0 }
 
 /* ===== Compact Contact Card ===== */
 .card.compact{ padding:14px }
-@media (min-width: 720px){
-  #contact .card{ max-width:720px }
+@media (min-width: 500px){
+  #contact .card{ max-width:500px }
   #contact .card.compact p{ margin:4px 0 }
 }
 
